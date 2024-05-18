@@ -1,0 +1,59 @@
+@startuml
+skinparam linetype ortho
+
+package "Multi-Agent System" {
+    package "Ontology" {
+        class Customer
+        class Order
+        class Product
+        Customer --> Order : places
+        Order --> Product : includes
+    }
+
+    package "Knowledge Graph" {
+        class Node {
+            + name: String
+            + type: String
+        }
+        class Edge {
+            + source: Node
+            + target: Node
+            + type: String
+        }
+        Customer -[hidden]down-> Node
+        Node -[hidden]down-> Edge
+        Order -[hidden]down-> Node
+        Product -[hidden]down-> Node
+    }
+
+    package "Reasoning Engine" {
+        class Rule {
+            + condition: String
+            + action: String
+        }
+        Rule --> "Knowledge Graph" : applies to
+    }
+
+    package "RAG" {
+        class Retrieval
+        class Generation
+        Retrieval --> "Knowledge Graph" : retrieves data from
+        Generation --> Retrieval : generates responses from
+    }
+
+    package "Agents" {
+        class Agent {
+            + id: String
+            + tasks: List
+        }
+        Agent --> RAG : queries
+    }
+}
+
+"Ontology" -down-> "Knowledge Graph" : defines
+"Knowledge Graph" -down-> "Reasoning Engine" : provides data to
+"Reasoning Engine" -down-> "Knowledge Graph" : infers new data to
+"Knowledge Graph" -down-> RAG : retrieves data from
+RAG -down-> Agents : provides information to
+
+@enduml

@@ -1,0 +1,43 @@
+Sure! Here’s a detailed PlantUML code for a state machine diagram representing the different states and transitions of an agent in a multi-agent system:
+
+```plantuml
+@startuml
+[*] --> Idle
+
+state Idle {
+  [*] --> WaitingForTask
+  WaitingForTask : Entry / Await task assignment
+  WaitingForTask --> Assigned : Task assigned
+}
+
+state Assigned {
+  [*] --> Planning
+  Planning : Entry / Develop plan to accomplish task
+
+  Planning --> Executing : Plan developed
+  Executing : Entry / Execute the plan
+
+  Executing --> Verifying : Task execution complete
+  Verifying : Entry / Verify task completion
+
+  Verifying --> Completed : Task verified
+  Verifying --> Failed : Task failed
+}
+
+state Completed {
+  [*] --> Reporting
+  Reporting : Entry / Report task completion
+  Reporting --> Idle : Report sent
+}
+
+state Failed {
+  [*] --> ErrorHandling
+  ErrorHandling : Entry / Handle task failure
+  ErrorHandling --> Idle : Error handled
+}
+
+Idle --> Assigned : New task received
+Completed --> Idle : Task completion acknowledged
+Failed --> Idle : Error resolution acknowledged
+
+@enduml

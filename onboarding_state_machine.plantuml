@@ -1,0 +1,40 @@
+@startuml
+[*] --> Start
+
+state Start {
+  [*] --> Welcome
+  Welcome : Entry / Display welcome message
+
+  Welcome --> CollectInfo : User clicks 'Next'
+}
+
+state CollectInfo {
+  [*] --> PersonalInfo
+  PersonalInfo : Entry / Prompt for personal information
+
+  PersonalInfo --> AddressInfo : User submits personal info
+  AddressInfo : Entry / Prompt for address information
+
+  AddressInfo --> Verification : User submits address info
+  Verification : Entry / Verify information
+
+  Verification --> Success : Verification successful
+  Verification --> Error : Verification failed
+}
+
+state Success {
+  [*] --> Complete
+  Complete : Entry / Display success message
+}
+
+state Error {
+  [*] --> Retry
+  Retry : Entry / Display error message and prompt retry
+
+  Retry --> CollectInfo : User clicks 'Retry'
+}
+
+Success --> [*] : Onboarding complete
+Error --> [*] : Onboarding incomplete
+
+@enduml
