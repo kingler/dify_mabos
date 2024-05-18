@@ -11,12 +11,8 @@
             "id": "d9e441fa80ddff55",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "api/mabos_router.py.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "api/mabos_router.py.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "api/mabos_router.py.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "api/mabos_router.py.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -146,18 +138,27 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "32737a44c3debe6b",
+  "active": "d9e441fa80ddff55",
   "lastOpenFiles": [
-    "mabos/ontology_manager.py",
+    "mabos/goal.py",
     "mabos/ontology.py.md",
+    "mabos/ontology.py",
+    "mabos/knowledge_base.py",
+    "mabos/plan.py",
+    "mabos/agent.py",
+    "mabos/action.py",
     "api/mabos_router.py.md",
+    "api/mabos_router.py",
+    "mabos/reasoning_engine.py",
+    "mabos/knowledge_graph.py",
+    "docker/volumes/db/data/pgdata/base/16384/pg_internal.init",
+    "docker/volumes/db/data/pgdata/base/5/pg_internal.init",
     "mabos/knowledge_base.py.md",
     "mabos/action.py.md",
     "mabos/plan.py.md",
     "mabos/agent.py.md",
     "MABOS-Multi-Agent Business Operating System.md",
     "srd.md",
-    "mabos",
     "NetworkX.md",
     "Owlready2.md"
   ]

@@ -1,6 +1,3 @@
-
-
-```python
 from typing import List
 from .goal import Goal
 from .plan import Plan
@@ -34,4 +31,3 @@ class Agent:
     def communicate(self, message: str, recipient: 'Agent'):
         # Implement agent communication logic
         pass
-```

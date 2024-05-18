@@ -1,13 +1,10 @@
-
-
-```python
-from fastapi import APIRouter
-from .agent import Agent
-from .goal import Goal
-from .plan import Plan
-from .action import Action
-from .knowledge_base import KnowledgeBase
-from .ontology import Ontology
+from fastapi import APIRouter, File, UploadFile
+from ..mabos.agent import Agent
+from ..mabos.goal import Goal
+from ..mabos.plan import Plan   
+from ..mabos.action import Action
+from ..mabos.knowledge_base import KnowledgeBase
+from ..mabos.ontology import Ontology
 
 router = APIRouter()
 
@@ -50,4 +47,3 @@ def add_agent_plan(agent_id: str, plan: Plan):
 def remove_agent_plan(agent_id: str, plan_id: str):
     # Implement logic to remove a plan from an agent
     pass
-```

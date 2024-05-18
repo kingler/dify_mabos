@@ -1,6 +1,3 @@
-
-
-```python
 from .ontology import Ontology
 
 class KnowledgeBase:
@@ -14,4 +11,3 @@ class KnowledgeBase:
     def query(self, query: str) -> list:
         # Implement logic to query the knowledge base using the ontology
         pass
-```

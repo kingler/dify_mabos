@@ -1,6 +1,3 @@
-
-
-```python
 from typing import List
 from .action import Action
 
@@ -13,4 +10,3 @@ class Plan:
     def execute(self, agent: 'Agent'):
         for action in self.actions:
             action.execute(agent)
-```
