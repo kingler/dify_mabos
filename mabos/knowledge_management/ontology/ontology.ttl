@@ -1,0 +1,173 @@
+@prefix : <http://example.com/onboarding-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:User rdf:type owl:Class ;
+      rdfs:label "User" .
+
+:OnboardingStep rdf:type owl:Class ;
+                rdfs:label "Onboarding Step" .
+
+:UserPreference rdf:type owl:Class ;
+                rdfs:label "User Preference" .
+
+:UserGoal rdf:type owl:Class ;
+          rdfs:label "User Goal" .
+
+:UserFeedback rdf:type owl:Class ;
+              rdfs:label "User Feedback" .
+
+:BusinessModel rdf:type owl:Class ;
+               rdfs:label "Business Model" .
+
+:BusinessDescription rdf:type owl:Class ;
+                     rdfs:label "Business Description" .
+
+:ProductDescription rdf:type owl:Class ;
+                    rdfs:label "Product Description" .
+
+:hasOnboardingStep rdf:type owl:ObjectProperty ;
+                   rdfs:domain :User ;
+                   rdfs:range :OnboardingStep .
+
+:hasPreference rdf:type owl:ObjectProperty ;
+               rdfs:domain :User ;
+               rdfs:range :UserPreference .
+
+:hasGoal rdf:type owl:ObjectProperty ;
+         rdfs:domain :User ;
+         rdfs:range :UserGoal .
+
+:providedFeedback rdf:type owl:ObjectProperty ;
+                  rdfs:domain :User ;
+                  rdfs:range :UserFeedback .
+
+:hasDescription rdf:type owl:ObjectProperty ;
+                rdfs:domain :BusinessModel ;
+                rdfs:range :BusinessDescription .
+
+:belongsTo rdf:type owl:ObjectProperty ;
+           rdfs:domain :ProductDescription ;
+           rdfs:range :BusinessModel .
+
+:userID rdf:type owl:DatatypeProperty ;
+         rdfs:domain :User ;
+         rdfs:range xsd:string .
+
+:name rdf:type owl:DatatypeProperty ;
+      rdfs:domain :User ;
+      rdfs:range xsd:string .
+
+:email rdf:type owl:DatatypeProperty ;
+       rdfs:domain :User ;
+       rdfs:range xsd:string .
+
+:registrationDate rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :User ;
+                  rdfs:range xsd:dateTime .
+
+:lastLoginDate rdf:type owl:DatatypeProperty ;
+               rdfs:domain :User ;
+               rdfs:range xsd:dateTime .
+
+:onboardingProgress rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :User ;
+                    rdfs:range xsd:integer .
+
+:stepID rdf:type owl:DatatypeProperty ;
+        rdfs:domain :OnboardingStep ;
+        rdfs:range xsd:string .
+
+:stepName rdf:type owl:DatatypeProperty ;
+          rdfs:domain :OnboardingStep ;
+          rdfs:range xsd:string .
+
+:stepDescription rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :OnboardingStep ;
+                 rdfs:range xsd:string .
+
+:stepOrder rdf:type owl:DatatypeProperty ;
+           rdfs:domain :OnboardingStep ;
+           rdfs:range xsd:integer .
+
+:isCompleted rdf:type owl:DatatypeProperty ;
+             rdfs:domain :OnboardingStep ;
+             rdfs:range xsd:boolean .
+
+:preferenceID rdf:type owl:DatatypeProperty ;
+              rdfs:domain :UserPreference ;
+              rdfs:range xsd:string .
+
+:preferenceName rdf:type owl:DatatypeProperty ;
+                rdfs:domain :UserPreference ;
+                rdfs:range xsd:string .
+
+:preferenceValue rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :UserPreference ;
+                 rdfs:range xsd:string .
+
+:goalID rdf:type owl:DatatypeProperty ;
+        rdfs:domain :UserGoal ;
+        rdfs:range xsd:string .
+
+:goalName rdf:type owl:DatatypeProperty ;
+          rdfs:domain :UserGoal ;
+          rdfs:range xsd:string .
+
+:goalDescription rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :UserGoal ;
+                 rdfs:range xsd:string .
+
+:goalStatus rdf:type owl:DatatypeProperty ;
+            rdfs:domain :UserGoal ;
+            rdfs:range xsd:string .
+
+:feedbackID rdf:type owl:DatatypeProperty ;
+            rdfs:domain :UserFeedback ;
+            rdfs:range xsd:string .
+
+:feedbackType rdf:type owl:DatatypeProperty ;
+              rdfs:domain :UserFeedback ;
+              rdfs:range xsd:string .
+
+:feedbackContent rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :UserFeedback ;
+                 rdfs:range xsd:string .
+
+:feedbackDate rdf:type owl:DatatypeProperty ;
+              rdfs:domain :UserFeedback ;
+              rdfs:range xsd:dateTime .
+
+:businessModelID rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :BusinessModel ;
+                 rdfs:range xsd:string .
+
+:businessModelName rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :BusinessModel ;
+                   rdfs:range xsd:string .
+
+:businessModelType rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :BusinessModel ;
+                   rdfs:range xsd:string .
+
+:descriptionID rdf:type owl:DatatypeProperty ;
+               rdfs:domain :BusinessDescription ;
+               rdfs:range xsd:string .
+
+:descriptionContent rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :BusinessDescription ;
+                    rdfs:range xsd:string .
+
+:productID rdf:type owl:DatatypeProperty ;
+           rdfs:domain :ProductDescription ;
+           rdfs:range xsd:string .
+
+:productName rdf:type owl:DatatypeProperty ;
+             rdfs:domain :ProductDescription ;
+             rdfs:range xsd:string .
+
+:productDescription rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :ProductDescription ;
+                    rdfs:range xsd:string .
